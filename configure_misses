@@ -1,0 +1,5 @@
+Configure miss: gpg2
+Configure miss: gpg
+Configure miss: build strict
+Configure miss: whether to build with gcov testing
+Configure miss: code coverage
