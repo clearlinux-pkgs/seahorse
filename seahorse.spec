@@ -4,7 +4,7 @@
 #
 Name     : seahorse
 Version  : 3.20.0
-Release  : 1
+Release  : 2
 URL      : https://download.gnome.org/sources/seahorse/3.20/seahorse-3.20.0.tar.xz
 Source0  : https://download.gnome.org/sources/seahorse/3.20/seahorse-3.20.0.tar.xz
 Summary  : No detailed summary available
