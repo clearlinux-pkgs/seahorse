@@ -1,2 +1,7 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
+vala
+p11-kit-dev
+openssh
+gcr-data
+openldap-dev
