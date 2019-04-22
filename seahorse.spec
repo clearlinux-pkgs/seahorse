@@ -4,7 +4,7 @@
 #
 Name     : seahorse
 Version  : 3.32
-Release  : 6
+Release  : 7
 URL      : https://download.gnome.org/sources/seahorse/3.32/seahorse-3.32.tar.xz
 Source0  : https://download.gnome.org/sources/seahorse/3.32/seahorse-3.32.tar.xz
 Summary  : GNOME application for managing PGP keys.
