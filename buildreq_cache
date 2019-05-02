@@ -1,4 +1,4 @@
-3.32
+3.32.1
 gnupg
 gpgme-dev
 libgpg-error-dev
@@ -8,3 +8,4 @@ libsoup-dev
 pkgconfig(gcr-3)
 pkgconfig(libsecret-1)
 pkgconfig(libsoup-2.4)
+pkgconfig(pwquality)
