@@ -4,10 +4,10 @@
 #
 Name     : seahorse
 Version  : 3.32.1
-Release  : 8
+Release  : 9
 URL      : https://download.gnome.org/sources/seahorse/3.32/seahorse-3.32.1.tar.xz
 Source0  : https://download.gnome.org/sources/seahorse/3.32/seahorse-3.32.1.tar.xz
-Summary  : No detailed summary available
+Summary  : GNOME application for managing PGP keys.
 Group    : Development/Tools
 License  : GFDL-1.1 GPL-2.0 LGPL-2.1
 Requires: seahorse-bin = %{version}-%{release}
@@ -21,7 +21,9 @@ BuildRequires : buildreq-meson
 BuildRequires : gcr-data
 BuildRequires : gnupg
 BuildRequires : gpgme-dev
+BuildRequires : libgpg-error-dev
 BuildRequires : libpwquality-dev
+BuildRequires : libsecret-dev
 BuildRequires : libsoup-dev
 BuildRequires : openldap-dev
 BuildRequires : openssh
@@ -108,8 +110,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556755740
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export SOURCE_DATE_EPOCH=1557023952
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain -Dkey-sharing=false  builddir
 ninja -v -C builddir
 
