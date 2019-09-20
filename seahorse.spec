@@ -4,10 +4,10 @@
 #
 Name     : seahorse
 Version  : 3.32.2
-Release  : 10
+Release  : 11
 URL      : https://download.gnome.org/sources/seahorse/3.32/seahorse-3.32.2.tar.xz
 Source0  : https://download.gnome.org/sources/seahorse/3.32/seahorse-3.32.2.tar.xz
-Summary  : GNOME application for managing PGP keys.
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.1 GPL-2.0 LGPL-2.1
 Requires: seahorse-bin = %{version}-%{release}
@@ -21,7 +21,9 @@ BuildRequires : buildreq-meson
 BuildRequires : gcr-data
 BuildRequires : gnupg
 BuildRequires : gpgme-dev
+BuildRequires : libgpg-error-dev
 BuildRequires : libpwquality-dev
+BuildRequires : libsecret-dev
 BuildRequires : libsoup-dev
 BuildRequires : openldap-dev
 BuildRequires : openssh
@@ -31,6 +33,7 @@ BuildRequires : pkgconfig(libsecret-1)
 BuildRequires : pkgconfig(libsoup-2.4)
 BuildRequires : pkgconfig(pwquality)
 BuildRequires : vala
+Patch1: 0001-gkr-Use-0-on-empty-flags.patch
 
 %description
 # Seahorse
@@ -102,13 +105,15 @@ man components for the seahorse package.
 
 %prep
 %setup -q -n seahorse-3.32.2
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1558210814
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1568962653
+export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -116,7 +121,7 @@ export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
-CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain -Dkey-sharing=false  builddir
+CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain -Dkey-sharing=false  builddir
 ninja -v -C builddir
 
 %install
