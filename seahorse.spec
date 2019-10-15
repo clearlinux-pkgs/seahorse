@@ -4,7 +4,7 @@
 #
 Name     : seahorse
 Version  : 3.34
-Release  : 12
+Release  : 13
 URL      : https://download.gnome.org/sources/seahorse/3.34/seahorse-3.34.tar.xz
 Source0  : https://download.gnome.org/sources/seahorse/3.34/seahorse-3.34.tar.xz
 Summary  : No detailed summary available
