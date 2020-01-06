@@ -1,4 +1,10 @@
-seahorse 3.32.0
+seahorse 3.34.1
+---------------
+ * Fix crash when deleting a subkey [!100]
+ * Fix a deadlock when using tofu trust model [!97]
+ * Updated translations
+
+seahorse 3.34.0
 ---------------
  * gkr: Fix use-after-free in password interaction [!90]
  * Add OARS Metadata tags
