@@ -1,12 +1,12 @@
-3.34.1
+3.36
+appstream-glib
 docbook-xml
 gnupg
 gpgme-dev
-libgpg-error-dev
+libhandy-dev
 libpwquality-dev
-libsecret-dev
 libsoup-dev
-pkgconfig(gcr-3)
+pkgconfig(libhandy-0.0)
 pkgconfig(libsecret-1)
 pkgconfig(libsoup-2.4)
 pkgconfig(pwquality)

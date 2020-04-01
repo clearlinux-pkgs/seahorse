@@ -1,7 +1,51 @@
-seahorse 3.34.1
+seahorse 3.36.0
 ---------------
- * Fix crash when deleting a subkey [!100]
- * Fix a deadlock when using tofu trust model [!97]
+ * Add hyperlink for COPYING in README [!124]
+ * meson: Validate appdata and desktop files [!123]
+ * flatpak: Remove dconf workaround [!123]
+ * flatpak: Remove libsoup [!123]
+ * gkr: Try to guess the username [!122]
+ * Updated translations
+
+seahorse 3.35.91
+----------------
+ * ui: Add F10 shortcut for 'open menu' [!118]
+ * ui: Remove ctrl+f1 shortcut [!118]
+ * pgp: Allow exporting both public & secret key [#208]
+ * pgp: Use gpgme_op_create_subkey() over gpgme_op_edit() [!115]
+ * pgp: Port several dialogs to GtkTemplate [!121]
+ * ssh: Small UI changes to KeyProperties [#222]
+ * gkr: Try to display a username if available [!120]
+ * gkr: Strip verbose 'Network secret for' prefix [!120]
+ * gkr: Use "network-wired" icon for NM secret
+ * common: Remove SeahorseObjectWidget [!116]
+ * css: Fix a missing 'px' unit [!117]
+ * meson: Use files() for source files
+ * Updated translations
+
+seahorse 3.35.90
+---------------
+ * a11y: Make sure import buttons have a mnemonic [#253]
+ * ui: Add keyboard shortcuts window [!107]
+ * ui: Take initials steps to provide an adaptive UI [!106]
+ * ui: Remove "Show combined" option [!106]
+ * ui: sidebar: Group by Passwords, Keys, Certificates [!109]
+ * ui: sidebar: Don't show "System Trust" if empty [#252, !108]
+ * ui: Use a GtkListBox instead of a GtkTreeView [!105]
+ * ssh: Show the public key and add button to copy it [!99, !114]
+ * pgp: Don't use short key IDs [!102]
+ * build: fix most compiler warnings [!103, !104, !110]
+ * build: simplify gpgme dependency, bump minimal version of Meson to 0.51 [!113]
+ * Updated translations
+
+seahorse 3.35.1
+---------------
+ * Replace GtkFileChooserDialog with GtkFileChooserNative
+ * Add development profile
+ * icon: Create a nightly app icon [!96]
+ * pgp: Update documentation for exporting public keys [!98]
+ * pgp: Fix segfault when deleting subkeys [#250]
+ * pgp: Fix deadlock with trust-model tofu or tofu-pgp [#2]
  * Updated translations
 
 seahorse 3.34.0
