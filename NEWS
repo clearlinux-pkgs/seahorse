@@ -1,3 +1,12 @@
+seahorse 3.36.2
+---------------
+ * Revert accidental string freeze break
+
+seahorse 3.36.1
+---------------
+ * Updated help pages [#271]
+ * Updated translations
+
 seahorse 3.36.0
 ---------------
  * Add hyperlink for COPYING in README [!124]
