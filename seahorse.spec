@@ -4,7 +4,7 @@
 #
 Name     : seahorse
 Version  : 3.36.2
-Release  : 16
+Release  : 17
 URL      : https://download.gnome.org/sources/seahorse/3.36/seahorse-3.36.2.tar.xz
 Source0  : https://download.gnome.org/sources/seahorse/3.36/seahorse-3.36.2.tar.xz
 Summary  : A library full of GTK widgets for mobile phones
