@@ -1,6 +1,24 @@
-seahorse 3.38.1
+seahorse 40.0
+-------------
+ * Fix paint issue when unlocking empty login keyring [#315,!153]
+ * pgp: Properly fix keyserver registration [!151]
+ * pgp: Add unit tests for PGP keyserver code [!167]
+ * build: Unbreak build using vala 0.48.x [!162]
+ * ci: Add minimal style checks to the CI [!168,!146]
+ * Several code cleanups
+ * Updated translations
+
+seahorse 40.alpha
 -----------------
- * ui: Bind to list item to listen to changes [!148]
+ * Fix import dialog [!144,#235]
+ * pgp: Add support for HKPS servers [!125]
+ * pgp: Allow empty passphrase on key creation [!143,#161]
+ * pgp: Fix expiry container disabled [#276]
+ * gkr: Add icon for network passwords
+ * ui: use libhandy list styling
+ * deps: Bump to libhandy 1.1 and remove submodule [!149]
+ * deps: Bump minimal supported version of gcr
+ * deps: Bump minimal supported versions of gpg/gpgme
  * Updated translations
 
 seahorse 3.38.0.1
