@@ -4,7 +4,7 @@
 #
 Name     : seahorse
 Version  : 41.0
-Release  : 21
+Release  : 22
 URL      : https://download.gnome.org/sources/seahorse/41/seahorse-41.0.tar.xz
 Source0  : https://download.gnome.org/sources/seahorse/41/seahorse-41.0.tar.xz
 Summary  : No detailed summary available
@@ -23,6 +23,7 @@ BuildRequires : docbook-xml
 BuildRequires : gcr-data
 BuildRequires : gnupg
 BuildRequires : gpgme-dev
+BuildRequires : gsettings-desktop-schemas
 BuildRequires : libpwquality-dev
 BuildRequires : libsoup-dev
 BuildRequires : openldap-dev
@@ -113,7 +114,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1632932751
+export SOURCE_DATE_EPOCH=1632933656
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -131,7 +132,11 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-meson test -C builddir || :
+target=$HOME/.local/share/glib-2.0/schemas
+mkdir -p $target
+glib-compile-schemas --targetdir=$target /usr/share/glib-2.0/schemas
+export XDG_DATA_DIRS="$HOME/.local/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}"
+meson test -C builddir --print-errorlogs || :
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/seahorse
