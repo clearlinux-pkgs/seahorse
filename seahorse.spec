@@ -18,7 +18,9 @@ BuildRequires : gsettings-desktop-schemas
 BuildRequires : openldap-dev
 BuildRequires : openssh
 BuildRequires : p11-kit-dev
+BuildRequires : pkgconfig(gcr-3)
 BuildRequires : pkgconfig(gcr-4)
+BuildRequires : pkgconfig(libhandy-1)
 BuildRequires : vala
 
 %description
@@ -38,7 +40,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1663966212
+export SOURCE_DATE_EPOCH=1663966331
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
