@@ -1,0 +1,11 @@
+42.0
+appstream-glib
+docbook-xml
+gpgme-dev
+libpwquality-dev
+libsoup-dev
+pkgconfig(gcr-3)
+pkgconfig(libhandy-1)
+pkgconfig(libsecret-1)
+pkgconfig(libsoup-2.4)
+pkgconfig(pwquality)
