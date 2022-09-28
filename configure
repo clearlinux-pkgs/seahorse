@@ -1,2 +1,3 @@
 -Dkey-sharing=false
 -Dmanpage=true
+-Dhkp-support=false

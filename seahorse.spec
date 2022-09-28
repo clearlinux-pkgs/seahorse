@@ -4,7 +4,7 @@
 #
 Name     : seahorse
 Version  : 42.0
-Release  : 27
+Release  : 28
 URL      : https://download.gnome.org/sources/seahorse/42/seahorse-42.0.tar.xz
 Source0  : https://download.gnome.org/sources/seahorse/42/seahorse-42.0.tar.xz
 Summary  : No detailed summary available
@@ -25,14 +25,12 @@ BuildRequires : gnupg
 BuildRequires : gpgme-dev
 BuildRequires : gsettings-desktop-schemas
 BuildRequires : libpwquality-dev
-BuildRequires : libsoup-dev
 BuildRequires : openldap-dev
 BuildRequires : openssh
 BuildRequires : p11-kit-dev
 BuildRequires : pkgconfig(gcr-3)
 BuildRequires : pkgconfig(libhandy-1)
 BuildRequires : pkgconfig(libsecret-1)
-BuildRequires : pkgconfig(libsoup-2.4)
 BuildRequires : pkgconfig(pwquality)
 BuildRequires : vala
 
@@ -114,7 +112,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1664162240
+export SOURCE_DATE_EPOCH=1664385329
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -124,7 +122,8 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain -Dkey-sharing=false \
--Dmanpage=true  builddir
+-Dmanpage=true \
+-Dhkp-support=false  builddir
 ninja -v -C builddir
 
 %check
@@ -140,9 +139,9 @@ meson test -C builddir --print-errorlogs || :
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/seahorse
-cp %{_builddir}/seahorse-%{version}/COPYING %{buildroot}/usr/share/package-licenses/seahorse/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/seahorse-%{version}/COPYING-DOCS %{buildroot}/usr/share/package-licenses/seahorse/c61905dc64311e8bcee6afc425fa40f917a45131 || :
-cp %{_builddir}/seahorse-%{version}/COPYING.LIB %{buildroot}/usr/share/package-licenses/seahorse/01a6b4bf79aca9b556822601186afab86e8c4fbf || :
+cp %{_builddir}/seahorse-%{version}/COPYING %{buildroot}/usr/share/package-licenses/seahorse/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/seahorse-%{version}/COPYING-DOCS %{buildroot}/usr/share/package-licenses/seahorse/c61905dc64311e8bcee6afc425fa40f917a45131
+cp %{_builddir}/seahorse-%{version}/COPYING.LIB %{buildroot}/usr/share/package-licenses/seahorse/01a6b4bf79aca9b556822601186afab86e8c4fbf
 DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang seahorse
 
