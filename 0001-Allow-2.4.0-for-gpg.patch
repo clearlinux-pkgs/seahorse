@@ -1,0 +1,25 @@
+From e5fd03563c636e2091223cb8b857539f212c8ffa Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Wed, 5 Jul 2023 10:58:01 -0700
+Subject: [PATCH] Allow 2.4.0 for gpg
+
+---
+ meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index e29b532..23d0b54 100644
+--- a/meson.build
++++ b/meson.build
+@@ -26,7 +26,7 @@ endif
+ # Dependencies
+ min_glib_version = '2.66'
+ min_gcr_version = '3.38'
+-accepted_gpg_versions = [ '2.2.0', '2.3.0' ]
++accepted_gpg_versions = [ '2.2.0', '2.3.0', '2.4.0' ]
+ gpg_check_version = find_program('build-aux' / 'gpg_check_version.py')
+ 
+ glib_deps = [
+-- 
+2.41.0
+
